@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Document Summarizer</h1>
+        <form id="summarize-form">
+            <textarea name="text" placeholder="Paste your text here..."></textarea>
+            <input type="file" name="file" accept=".txt,.pdf,.docx">
+            <div class="radio-group">
+                <label><input type="radio" name="summary_type" value="quick" checked> Quick Summary</label>
+                <label><input type="radio" name="summary_type" value="detailed"> Detailed Summary</label>
+            </div>
+            <button type="submit">Summarize</button>
+        </form>
+        <div id="summary-result"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
